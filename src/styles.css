@@ -880,7 +880,7 @@ label {
   font-weight: 500;
 }
 
-input,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
   width: 100%;
@@ -907,11 +907,25 @@ select:focus {
   box-shadow: 0 0 0 4px var(--brass-soft);
 }
 
-.check {
+label.check {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: fit-content;
+  max-width: 100%;
   font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+label.check input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--forest);
+  cursor: pointer;
 }
 
 .auth-shell {
