@@ -929,21 +929,34 @@ label.check input[type="checkbox"] {
 }
 
 .write-note {
-  margin-top: 1.5rem;
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius);
-  background: color-mix(in srgb, var(--blush) 42%, var(--paper));
-  border: 1px solid var(--line);
-  display: grid;
-  gap: 0.9rem;
-  justify-items: start;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+  max-width: none;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-.write-note p {
-  margin: 0;
-  max-width: none;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
+.write-note-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: var(--forest);
+  color: #fffdf9;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  box-shadow: 0 8px 18px -12px var(--forest-deep);
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.write-note-action:hover {
+  background: var(--forest-deep);
+  transform: translateY(-1px);
 }
 
 .auth-shell {
