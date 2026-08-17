@@ -1,19 +1,19 @@
 :root {
-  --bg: #f3ece2;
-  --bg-deep: #e8ddd0;
-  --paper: #fffaf3;
-  --ink: #171311;
-  --ink-soft: #3c342e;
-  --muted: #746960;
-  --line: rgba(23, 19, 17, 0.1);
-  --forest: #2f3d34;
-  --forest-deep: #243029;
-  --brass: #a36b3c;
-  --brass-soft: #ead7c4;
-  --clay: #8a4a3c;
-  --blush: #f0e2d6;
-  --shadow-paper: 0 1px 2px rgba(23, 19, 17, 0.04), 0 22px 48px -28px rgba(23, 19, 17, 0.35);
-  --shadow-lift: 0 16px 44px -24px rgba(23, 19, 17, 0.38);
+  --bg: #fff7f0;
+  --bg-deep: #f8e9dc;
+  --paper: #fffdf9;
+  --ink: #2c1c16;
+  --ink-soft: #5a3f34;
+  --muted: #8f6f62;
+  --line: rgba(44, 28, 22, 0.1);
+  --forest: #c45c3e;
+  --forest-deep: #a8452c;
+  --brass: #c4843c;
+  --brass-soft: #f6ddbc;
+  --clay: #d46a4a;
+  --blush: #f8d9cc;
+  --shadow-paper: 0 1px 2px rgba(44, 28, 22, 0.04), 0 22px 48px -28px rgba(196, 92, 62, 0.28);
+  --shadow-lift: 0 16px 44px -24px rgba(44, 28, 22, 0.28);
   --radius: 20px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header: 80px;
@@ -35,8 +35,8 @@ html {
 body {
   font-family: var(--font-ui);
   background:
-    radial-gradient(1200px 500px at 10% -10%, rgba(163, 107, 60, 0.08), transparent 50%),
-    radial-gradient(900px 420px at 100% 0%, rgba(47, 61, 52, 0.07), transparent 46%),
+    radial-gradient(1100px 520px at 8% -8%, rgba(244, 176, 140, 0.28), transparent 52%),
+    radial-gradient(900px 420px at 100% 0%, rgba(232, 168, 92, 0.16), transparent 46%),
     var(--bg);
   color: var(--ink);
   font-size: 1.05rem;
@@ -342,11 +342,12 @@ h4 {
 }
 
 .hero h1 {
-  font-size: clamp(2.9rem, 7.2vw, 5.5rem);
-  max-width: 12ch;
+  font-size: clamp(2.15rem, 5.2vw, 3.7rem);
+  max-width: 16ch;
   margin: 0.75rem 0 1.15rem;
   font-weight: 500;
   font-variation-settings: "SOFT" 30, "WONK" 0;
+  line-height: 1.12;
 }
 
 .hero h1 em {
@@ -356,12 +357,16 @@ h4 {
   font-variation-settings: "SOFT" 60, "WONK" 0;
 }
 
-.hero p.lede {
-  max-width: 40ch;
+.hero .lede {
+  max-width: 48ch;
   color: var(--ink-soft);
-  font-size: 1.14rem;
-  line-height: 1.65;
-  margin-bottom: 1.9rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
+}
+
+.hero .lede:last-of-type {
+  margin-bottom: 1.8rem;
 }
 
 .hero-actions {
@@ -381,7 +386,7 @@ h4 {
   object-fit: cover;
   border-radius: 32px 8px 32px 8px;
   box-shadow: var(--shadow-paper);
-  filter: saturate(0.92) contrast(1.04);
+  filter: saturate(1.05) contrast(1.02);
 }
 
 .hero-caption {
@@ -533,7 +538,58 @@ h4 {
   object-fit: cover;
   border-radius: 28px 8px 28px 8px;
   box-shadow: var(--shadow-paper);
-  filter: saturate(0.92) contrast(1.04);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.filosofia-copy p {
+  max-width: 54ch;
+  color: var(--ink-soft);
+  margin-bottom: 0.95rem;
+}
+
+.filosofia-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.hallazgos-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.filosofia-copy h2 {
+  font-size: clamp(1.85rem, 3.5vw, 2.55rem);
+  max-width: 18ch;
+  line-height: 1.16;
+  margin: 0.7rem 0 1.35rem;
+}
+
+.hallazgo-card {
+  display: block;
+  padding: 1.45rem 1.4rem 1.5rem;
+  min-height: 210px;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.hallazgo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+  border-color: color-mix(in srgb, var(--clay) 28%, var(--line));
+}
+
+.hallazgo-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+  margin-bottom: 0.7rem;
+}
+
+.hallazgo-card h3 {
+  font-size: 1.65rem;
+  margin-bottom: 0.45rem;
+}
+
+.hallazgo-card p {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
 }
 
 .therapy {
@@ -1142,6 +1198,9 @@ select:focus {
   .library-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .hallazgos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .cards.two {
     grid-template-columns: 1fr 1fr;
   }
@@ -1153,6 +1212,9 @@ select:focus {
 @media (min-width: 1100px) {
   .library-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .hallazgos-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
   .footer-grid {
     grid-template-columns: 1.4fr 1fr 1fr;

@@ -9,6 +9,45 @@ import {
   temaLabel,
 } from "../data/content";
 
+const HALLAZGOS = [
+  {
+    icon: "💬",
+    title: "Comunidad",
+    to: "/comunidad",
+    text: "Comparte experiencias, conecta con otras personas y descubre diferentes perspectivas en un espacio seguro y respetuoso.",
+  },
+  {
+    icon: "💌",
+    title: "Cartas",
+    to: "/cartas",
+    text: "Lee cartas escritas por Estefani y por la comunidad. También podrás escribir las tuyas, guardarlas en privado o compartirlas cuando lo desees.",
+  },
+  {
+    icon: "🌿",
+    title: "Conócete",
+    to: "/escribir",
+    text: "Ejercicios de reflexión, journaling, herramientas de autoconocimiento y tests orientativos para comprenderte mejor.",
+  },
+  {
+    icon: "🤍",
+    title: "Bienestar",
+    to: "/biblioteca",
+    text: "Meditaciones, respiraciones guiadas, hábitos saludables, ejercicios prácticos y recursos para cuidar de ti día a día.",
+  },
+  {
+    icon: "📚",
+    title: "Biblioteca",
+    to: "/biblioteca",
+    text: "Una selección curada de libros, películas, documentales, podcasts y otros recursos recomendados por Estefani, acompañados de una reseña personal.",
+  },
+  {
+    icon: "🌸",
+    title: "Acompañamiento",
+    to: "/terapia",
+    text: "Si en algún momento deseas profundizar en tu proceso personal, podrás conocer mi forma de trabajar y comenzar terapia cuando tú lo decidas.",
+  },
+];
+
 export default function Home() {
   const carta = cartaBySlug(CARTA_DE_HOY)!;
   const ejercicio = EJERCICIOS[0];
@@ -21,34 +60,88 @@ export default function Home() {
           <div>
             <p className="eyebrow">Qué gusto que estés aquí</p>
             <h1>
-              Un lugar para escribir,
+              Todos necesitamos un lugar donde
               <br />
-              <em>leer y respirar.</em>
+              <em>sentirnos comprendidos.</em>
             </h1>
             <p className="lede">
-              Este no es un consultorio ni una red social. Es un espacio para dedicarte unos minutos: leer una carta,
-              escuchar algo tranquilo, escribir lo que llevas contigo. Vuelve cuando quieras.
+              Hay momentos en los que buscamos respuestas. Otros en los que solo necesitamos un poco de calma. Y
+              algunos en los que simplemente queremos seguir creciendo.
+            </p>
+            <p className="lede">
+              Sea cual sea el motivo que te trajo hasta aquí, este es un espacio donde puedes compartir tu historia,
+              descubrir nuevas perspectivas, encontrar herramientas para cuidar de tu bienestar emocional y formar
+              parte de una comunidad que cree en escuchar, comprender y crecer juntos.
             </p>
             <div className="hero-actions">
-              <Link className="btn btn-primary" to="/escribir">
-                Escribir algo hoy
+              <Link className="btn btn-primary" to="/comunidad">
+                Explorar la comunidad
               </Link>
-              <Link className="btn btn-ghost link-underline" to="/cartas">
-                Leer las cartas
+              <Link className="btn btn-ghost link-underline" to="/historias">
+                Compartir mi historia
               </Link>
             </div>
           </div>
           <figure className="hero-photo">
             <img
               src="/images/hero.jpg"
-              alt="Cuaderno abierto, una taza de café y una rama de salvia sobre una mesa con luz natural"
+              alt="Un grupo pequeño conversando alrededor de una mesa, con café y luz natural"
             />
-            <figcaption className="hero-caption">Un rincón para volver a ti, sin prisa.</figcaption>
+            <figcaption className="hero-caption">Qué bien se siente estar aquí.</figcaption>
           </figure>
         </div>
       </section>
 
       <section className="section">
+        <div className="container split">
+          <div className="filosofia-copy">
+            <p className="eyebrow">Nuestra filosofía</p>
+            <h2>Creemos que cuidar de nuestra salud emocional debería formar parte de la vida, no solo de los momentos difíciles.</h2>
+            <p>
+              Hay días en los que necesitamos respuestas. Otros en los que buscamos un poco de calma. Y también hay
+              momentos en los que simplemente queremos conocernos mejor, crecer o dedicar tiempo a nosotros mismos.
+            </p>
+            <p>Por eso nació este espacio.</p>
+            <p>
+              Una comunidad donde puedes compartir lo que estás viviendo, descubrir historias con las que puedas
+              identificarte y encontrar herramientas que te acompañen en tu bienestar.
+            </p>
+            <p>Aquí creemos que cada historia tiene valor.</p>
+            <p>Que escuchar también transforma.</p>
+            <p>Y que, muchas veces, una nueva perspectiva puede cambiar la forma en que entendemos nuestra propia vida.</p>
+            <p>Este no es un lugar para tener todas las respuestas.</p>
+            <p>
+              Es un lugar para hacer una pausa, sentirte comprendido y recordar que cuidar de ti también es una forma de
+              crecer.
+            </p>
+          </div>
+          <img
+            src="/images/filosofia.jpg"
+            alt="Luz natural entre árboles, un paisaje cotidiano que invita a detenerse"
+          />
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head">
+            <h2>¿Qué encontrarás aquí?</h2>
+          </div>
+          <div className="hallazgos-grid">
+            {HALLAZGOS.map((item) => (
+              <Link className="paper card-pad hallazgo-card" key={item.title} to={item.to}>
+                <p className="hallazgo-icon" aria-hidden="true">
+                  {item.icon}
+                </p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="container panel-grid">
           <article className="paper card-pad question-card">
             <p className="eyebrow">Pregunta del día</p>
@@ -158,7 +251,10 @@ export default function Home() {
               Conocer el proceso
             </Link>
           </div>
-          <img src="/images/terapia.jpg" alt="Dos sillones frente a una ventana con luz suave en un consultorio cálido" />
+          <img
+            src="/images/terapia.jpg"
+            alt="Un grupo de personas sentadas juntas, abrazadas, mirando el horizonte"
+          />
         </div>
       </section>
     </>

@@ -11,7 +11,7 @@ export default function Biblioteca() {
         <figure className="hero-photo" style={{ margin: "2.2rem 0 2.4rem" }}>
           <img
             src="/images/biblioteca.jpg"
-            alt="Libros apilados junto a una cortina de lino con luz natural"
+            alt="Un libro abierto, unas gafas y una taza de café sobre tela clara, con luz de mañana"
             style={{ height: 380, borderRadius: 24 }}
           />
         </figure>

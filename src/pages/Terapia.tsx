@@ -34,7 +34,7 @@ export default function Terapia() {
         <p>La terapia no es el único camino y no tiene prisa. Está aquí, disponible, para cuando tú lo decidas.</p>
         <img
           src="/images/terapia.jpg"
-          alt="Dos sillones frente a una ventana con luz suave en un consultorio cálido"
+          alt="Un grupo de personas sentadas juntas, abrazadas, mirando el horizonte"
           style={{ width: "100%", height: 420, objectFit: "cover", borderRadius: 24, margin: "2rem 0" }}
         />
 
