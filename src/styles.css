@@ -591,11 +591,18 @@ h4 {
   color: rgba(246, 239, 230, 0.62);
 }
 
-.footer-legal {
+.footer-legal-wrap {
   display: flex;
-  width: fit-content;
-  max-width: calc(100% - 2.5rem);
-  margin: 1.35rem auto 0;
+  justify-content: center;
+  margin-top: 1.35rem;
+  padding: 0 1.25rem;
+}
+
+.footer-legal {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
   border: 1px solid rgba(246, 239, 230, 0.1);
   border-radius: 999px;
@@ -627,7 +634,8 @@ h4 {
   border-radius: 999px;
 }
 
-.legal-meta {
+.legal-meta,
+.legal-dot {
   color: rgba(246, 239, 230, 0.45);
 }
 
@@ -644,23 +652,22 @@ h4 {
 
 .footer .copyright,
 .footer small.copyright {
-  display: block;
-  margin: 0.7rem 0 0;
+  display: inline;
+  margin: 0;
   padding: 0;
   border: 0;
-  text-align: center;
   font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
-  color: rgba(246, 239, 230, 0.5);
+  color: rgba(246, 239, 230, 0.62);
   white-space: nowrap;
 }
 
 @media (max-width: 800px) {
   .footer-legal {
-    max-width: calc(100% - 2rem);
+    width: auto;
     border-radius: 16px;
   }
 

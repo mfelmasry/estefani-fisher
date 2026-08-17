@@ -110,17 +110,20 @@ export default function Layout() {
             </nav>
           </div>
         </div>
-        <div className="footer-legal">
-          <p className="disclaimer">
-            <span className="legal-label">Aviso</span>
-            Este espacio no sustituye la atención psicológica ni médica. Si estás en riesgo, llama a la Línea de la
-            Vida:{" "}
-            <a href="tel:8009112000">800 911 2000</a>
-            <span className="legal-meta">México · 24 h</span>
-          </p>
-        </div>
-        <div className="container">
-          <small className="copyright">© {new Date().getFullYear()} Estefani Fisher</small>
+        <div className="footer-legal-wrap">
+          <div className="footer-legal">
+            <p className="disclaimer">
+              <span className="legal-label">Aviso</span>
+              Este espacio no sustituye la atención psicológica ni médica. Si estás en riesgo, llama a la Línea de la
+              Vida:{" "}
+              <a href="tel:8009112000">800 911 2000</a>
+              <span className="legal-meta">México · 24 h</span>
+              <span className="legal-dot" aria-hidden>
+                ·
+              </span>
+              <span className="copyright">© {new Date().getFullYear()} Estefani Fisher</span>
+            </p>
+          </div>
         </div>
       </footer>
     </div>
