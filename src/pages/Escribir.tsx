@@ -73,14 +73,14 @@ export default function Escribir() {
             Enviar
           </button>
         </form>
-        <p className="muted" style={{ marginTop: 18 }}>
-          Esto es privado. No se publica ni aparece en la comunidad.{" "}
+        <div className="write-note">
+          <p>Esto es privado. No se publica ni aparece en la comunidad.</p>
           {!user && (
-            <Link className="link-underline" to="/entrar?next=/escribir">
+            <Link className="btn btn-outline" to="/entrar?next=/escribir">
               Entra para guardarlo
             </Link>
           )}
-        </p>
+        </div>
       </div>
     </section>
   );

@@ -928,6 +928,24 @@ label.check input[type="checkbox"] {
   cursor: pointer;
 }
 
+.write-note {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--blush) 42%, var(--paper));
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 0.9rem;
+  justify-items: start;
+}
+
+.write-note p {
+  margin: 0;
+  max-width: none;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
 .auth-shell {
   width: min(1080px, calc(100% - 2.5rem));
   margin: 3rem auto 5rem;
