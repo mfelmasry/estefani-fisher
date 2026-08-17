@@ -928,35 +928,38 @@ label.check input[type="checkbox"] {
   cursor: pointer;
 }
 
-.write-note {
+.page-hero .write-note {
   margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 0.55rem 0.85rem;
+  gap: 0.75rem;
   max-width: none;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 .write-note-action {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 0.3rem 0.85rem;
+  flex-shrink: 0;
+  min-height: 32px;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--clay) 45%, var(--line));
   border-radius: 999px;
-  background: var(--forest);
-  color: #fffdf9;
-  font-size: 0.82rem;
+  background: transparent;
+  color: var(--clay);
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  box-shadow: 0 8px 18px -12px var(--forest-deep);
-  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 .write-note-action:hover {
-  background: var(--forest-deep);
-  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--blush) 70%, transparent);
+  border-color: var(--clay);
+  color: var(--forest-deep);
 }
 
 .auth-shell {
@@ -1089,6 +1092,9 @@ label.check input[type="checkbox"] {
 @media (max-width: 520px) {
   .social-grid {
     grid-template-columns: 1fr;
+  }
+  .page-hero .write-note {
+    flex-wrap: wrap;
   }
 }
 
